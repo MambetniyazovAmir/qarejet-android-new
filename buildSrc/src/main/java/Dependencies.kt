@@ -36,7 +36,6 @@ object Modules {
     const val feature_splash = ":feature-splash"
     const val feature_stats = ":feature-stats"
     const val feature_transaction = ":feature-transaction"
-
 }
 
 object Libs {
