@@ -18,12 +18,10 @@ class GetCategoriesWithAmountUseCase(private val transactionRepository: Transact
             parameter.first.dayOfMonth().withMaximumValue().plusDays(1).withTimeAtStartOfDay()
                 .minusSeconds(1).millis
         val categoryType = parameter.second
-        return flow {
-            transactionRepository.getTransactionsWithinDateByType(
-                startDate,
-                endDate,
-                categoryType
-            ).collect()
-        }
+        return transactionRepository.getTransactionsWithinDateByType(
+            startDate,
+            endDate,
+            categoryType
+        )
     }
 }
